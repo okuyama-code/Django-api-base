@@ -1,0 +1,31 @@
+services:
+  api:
+    build:
+      context: . # 基準となるパス。docker-compose.ymlがあるカレントディレクトリにいてDockerfileなどを探しに行く。
+      dockerfile: .devcontainer/Dockerfile # 使用するDockerfileのパス
+    container_name: django_api # コンテナの名前を指定
+    command: python manage.py runserver 0.0.0.0:8000 # Django の開発サーバーを起動するコマンド
+    volumes: # バインドマウント (ファイルを同期する) (ホストPCのフォルダとコンテナ内のフォルダをリアルタイムで同期)
+      - ./backend:/usr/src/app # ホスト（PC）の ./backend/ フォルダ を コンテナの /usr/src/app に接続（マウント）
+    ports:
+      - "8000:8000" # ホストのポート8000とコンテナのポート8000を紐付ける。Docker コンテナは仮想環境の中で動いているので、デフォルトでは外部（ホストPC）からアクセスできません。ports: を設定すると、ホストPCのポートとコンテナのポートを紐づけ（ポートフォワード）、ホストからアクセスできるようになります。
+    depends_on:
+      - db  # このコンテナを起動する前に db（PostgreSQL）コンテナを起動する
+    env_file:
+      - .env # 環境変数を記載した .env ファイルを読み込む
+
+  db:
+    image: postgres:16
+    container_name: postgres_db
+    restart: always  # コンテナが停止した場合に自動で再起動
+    environment:  # 環境変数を設定
+      POSTGRES_USER: ${POSTGRES_USER}  # ユーザー名（.env ファイルから読み込む）
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}  # パスワード（.env ファイルから読み込む）
+      POSTGRES_DB: ${POSTGRES_DB}  # 作成するデータベース名（.env ファイルから読み込む）
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # データを永続化するためのボリュームをマウント
+    ports:
+      - "5432:5432"  # ホストのポート5432とコンテナのポート5432を紐づける（PostgreSQL のデフォルトポート）
+
+volumes:
+  postgres_data:  # PostgreSQL のデータを永続化するためのボリューム

@@ -1,0 +1,204 @@
+{
+  "name": "Django Development",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "api",
+  "workspaceFolder": "/usr/src/app",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-azuretools.vscode-docker",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "aaron-bond.better-comments",
+        "janisdd.vscode-edit-csv",
+        "usernamehw.errorlens",
+        "vscode.git",
+        "mhutchie.git-graph",
+        "donjayamanne.githistory",
+        "gitHub.vscode-pull-request-github",
+        "eamodio.gitlens",
+        "oderwat.indent-rainbow",
+        "ms-ceintl.vscode-language-pack-ja",
+        "christian-kohler.npm-intellisense",
+        "faissaloux.package-manager-intellisense",
+        "christian-kohler.path-intellisense",
+        "mechatroner.rainbow-csv",
+        "chrmarti.regex",
+        "bradlc.vscode-tailwindcss",
+        "gruntfuggly.todo-tree",
+        "vscode-icons-team.vscode-icons"
+      ],
+      "settings": {
+        "editor.fontSize": 16,
+        "editor.tabSize": 2,
+        "editor.wordWrap": "on",
+        "notebook.output.wordWrap": true,
+        "git.enableSmartCommit": true,
+        "editor.renderWhitespace": "all",
+        "terminal.integrated.scrollback": 6000,
+        "editor.minimap.size": "fit",
+        "files.trimTrailingWhitespace": true,
+        "githubPullRequests.pullBranch": "never",
+        "workbench.editorAssociations": {
+          "*.csv": "default"
+        },
+        "files.autoSave": "afterDelay",
+        "editor.formatOnSave": true,
+        "[prisma]": {
+          "editor.defaultFormatter": "Prisma.prisma"
+        },
+        "workbench.tree.enableStickyScroll": false,
+        "workbench.tree.stickyScrollMaxItemCount": 1,
+        "editor.stickyScroll.maxLineCount": 1,
+        "editor.stickyScroll.enabled": false,
+        "hediet.vscode-drawio.resizeImages": null,
+        "workbench.iconTheme": "vscode-icons",
+        "better-comments.multilineComments": true,
+        "better-comments.highlightPlainText": false,
+        "better-comments.tags": [
+          {
+            "tag": "!",
+            "color": "#FF2D00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "tag": "?",
+            "color": "#3498DB",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "tag": "//",
+            "color": "#474747",
+            "strikethrough": true,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "tag": "todo",
+            "color": "#FF8C00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "tag": "*",
+            "color": "#98C379",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": true,
+            "italic": true
+          },
+          {
+            "tag": "NOTE",
+            "color": "#FFD700", // ゴールド色
+            "strikethrough": false,
+            "underline": true,
+            "backgroundColor": "transparent",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "tag": "DEBUG",
+            "color": "#FF1493", // ディープピンク色
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "#1E1E1E", // 暗い背景色
+            "bold": true,
+            "italic": true
+          },
+          {
+            "tag": "SECTION",
+            "color": "#1E90FF", // ドジャーブルー
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "tag": "CHAPTER",
+            "color": "#32CD32", // ライムグリーン
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "tag": "=",
+            "color": "#1E90FF", // ドジャーブルー（SECTIONと同じ色）
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "tag": "-",
+            "color": "#32CD32", // ライムグリーン（CHAPTERと同じ色）
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "tag": "END",
+            "color": "#FF4500", // オレンジレッド
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": true,
+            "italic": false
+          }
+        ],
+        "git.ignoreRebaseWarning": true,
+        "yaml.customTags": [
+          "!And",
+          "!And sequence",
+          "!If",
+          "!If sequence",
+          "!Not",
+          "!Not sequence",
+          "!Equals",
+          "!Equals sequence",
+          "!Or",
+          "!Or sequence",
+          "!FindInMap sequence",
+          "!Base64",
+          "!Base64 mapping",
+          "!Cidr",
+          "!Cidr sequence",
+          "!Ref",
+          "!Sub",
+          "!GetAtt",
+          "!GetAZs",
+          "!ImportValue",
+          "!Select",
+          "!Select sequence",
+          "!Split",
+          "!Split sequence",
+          "!Join sequence"
+        ],
+        "diffEditor.hideUnchangedRegions.enabled": true,
+        "workbench.colorTheme": "Night Owl"
+      }
+    }
+  }
+}
