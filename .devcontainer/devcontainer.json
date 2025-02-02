@@ -47,9 +47,6 @@
         },
         "files.autoSave": "afterDelay",
         "editor.formatOnSave": true,
-        "[prisma]": {
-          "editor.defaultFormatter": "Prisma.prisma"
-        },
         "workbench.tree.enableStickyScroll": false,
         "workbench.tree.stickyScrollMaxItemCount": 1,
         "editor.stickyScroll.maxLineCount": 1,
