@@ -6,7 +6,7 @@ services:
     container_name: django_api # コンテナの名前を指定
     command: python manage.py runserver 0.0.0.0:8000 # Django の開発サーバーを起動するコマンド
     volumes: # バインドマウント (ファイルを同期する) (ホストPCのフォルダとコンテナ内のフォルダをリアルタイムで同期)
-      - ./backend:/usr/src/app # ホスト（PC）の ./backend/ フォルダ を コンテナの /usr/src/app に接続（マウント）
+      - ./backend:/usr/src/app # ホスト（PC）のカレントディレクトリをコンテナの /usr/src/app に接続（マウント）
     ports:
       - "8000:8000" # ホストのポート8000とコンテナのポート8000を紐付ける。Docker コンテナは仮想環境の中で動いているので、デフォルトでは外部（ホストPC）からアクセスできません。ports: を設定すると、ホストPCのポートとコンテナのポートを紐づけ（ポートフォワード）、ホストからアクセスできるようになります。
     depends_on:
